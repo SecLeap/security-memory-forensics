@@ -8,11 +8,12 @@
 
 | 阶段 | 工具 | 用途 | 必须保留的输出 |
 | --- | --- | --- | --- |
-| 文件初筛 | HashMyFiles、PeStudio、DIE、CFF Explorer、PE-bear/Exeinfo PE、HxD、FileInsight、CyberChef | 哈希、PE 结构、字符串、编码和节区线索 | SHA-256、工具版本、偏移/规则与截图或导出 |
-| 运行观察 | Process Monitor、Noriben、System Informer、Process Explorer、Autoruns、Regshot | 进程树、文件/注册表/线程事件、模块、句柄和启动项差异 | PML、CSV、Noriben 报告、前后 Regshot、PID 清单 |
-| 网络观察 | Wireshark、Fiddler、TCPLogView、Network Connections | DNS、HTTP、TCP 会话与连接归属 | PCAP、会话导出、显示过滤器、五元组与时区 |
+| 文件初筛 | HashMyFiles、PEStudio、PE-bear、DIE、FLARE-FLOSS、capa、LOKI + signature-base、CFF Explorer、Exeinfo PE、MiTeC EXE Explorer、HxD、FileInsight、CyberChef | 哈希、PE 结构、静态/解码字符串、能力规则、IOC/YARA 线索、编码和节区线索 | SHA-256、工具/规则版本、偏移/规则与截图或导出 |
+| 容器离线提取 | InnoExtractor、InnoUnpacker（来源核验后）、pyinstxtractor-ng | Inno Setup / PyInstaller 容器的文件清单、元数据与派生物提取 | 输入与工具哈希、提取日志、目录树、派生物 SHA-256；不执行原件或提取物 |
+| 运行观察 | Process Monitor、Noriben、System Informer、Process Explorer、TaskExplorer、API Monitor、Cheat Engine（只读定位）、Autoruns、Regshot | 进程树、文件/注册表/API/线程事件、模块、内存映射、句柄和启动项差异 | PML、CSV、Noriben 报告、API Monitor capture、TaskExplorer 截图/导出、地址记录、前后 Regshot、PID 清单 |
+| 网络观察 | Wireshark、Fiddler、TCPLogView、FakeNet-NG、Network Connections | DNS、HTTP、TCP 会话、连接归属与本地模拟服务 | PCAP、会话导出、FakeNet 报告、五元组与时区 |
 | 调试/逆向 | x64dbg/x32dbg、WinDbg、Ghidra、Scylla、Imports Fixer | 函数、线程入口、模块基址、PE 映像布局 | 调试笔记、地址、输入/输出副本哈希 |
-| 内存取证 | 经验证的采集工具、Volatility 3 | RAM 镜像、进程/VAD/模块/socket 分析 | 镜像 SHA-256、采集记录、插件命令和完整输出 |
+| 内存取证 | 经验证的采集工具、FTK Imager、MemProcFS、Volatility 3 | RAM 镜像制作、磁盘主镜像/工作副本分离、只读挂载、进程/VAD/模块/socket 分析 | 镜像 SHA-256、采集记录、验证日志、挂载/插件命令和完整输出 |
 
 来自旧环境截图的 Volatility 2、Process Hacker、DumpIt 及来源不明的 `da.exe`、`UIF`、`iSpy` 不应默认安装。先核验维护者、下载页面、数字签名或 SHA-256；日常分析优先使用 Volatility 3 与 System Informer。
 
@@ -22,6 +23,7 @@
 2. 使用 PeStudio、DIE 或 CFF Explorer 查看 PE 架构、节区、导入、签名、资源和字符串；只记录线索，不把壳/字符串识别视为行为事实。
 3. 用 HxD/FileInsight 定位已关注的字节或偏移；用 CyberChef 记录解码配方和输入/输出哈希。
 4. 在 Ghidra 中为样本副本标记函数和字符串地址；这些地址后续用来解释调试器或内存镜像的模块/线程位置。
+5. 需要检查安装包或 PyInstaller 容器时，先用 InnoExtractor/InnoUnpacker 或 pyinstxtractor-ng 建立文件清单，再仅将提取派生物送入 PE-bear、DiE、FLOSS 等静态工具；原容器与提取物都不得执行。
 
 ## 动态观察手册
 

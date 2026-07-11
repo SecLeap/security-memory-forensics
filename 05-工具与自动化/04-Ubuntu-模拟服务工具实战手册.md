@@ -1,22 +1,22 @@
-# Debian 模拟服务工具实战手册
+# Ubuntu 模拟服务工具实战手册
 
-Debian 在实验室中充当受控服务与证据记录端：接收 Win11 实验机的 DNS/HTTP 等请求并写入日志。它绝不能作为互联网出口、代理、跳板或生产服务。
+Ubuntu 在实验室中充当受控服务与证据记录端：接收 Win11 实验机的 DNS/HTTP 等请求并写入日志。它绝不能作为互联网出口、代理、跳板或生产服务。
 
-单个服务的安装、验证、使用方法与场景以 [Debian 逐工具手册](07-Debian-工具安装手册/README.md) 为准；本页只保留服务组合、端口关系和证据归档。
+单个服务的安装、验证、使用方法与场景以 [Ubuntu 逐工具手册](07-Ubuntu-工具安装手册/README.md) 为准；本页只保留服务组合、端口关系和证据归档。
 
 ## 工具总表
 
 | 工具 | 职责 | 实践产物 | 端口关系 |
 | --- | --- | --- | --- |
-| FakeDNS | 将实验域名解析到 Debian 地址 | 查询日志、规则副本、规则哈希 | 独占 DNS 53；与 INetSim DNS 冲突 |
+| FakeDNS | 将实验域名解析到 Ubuntu 地址 | 查询日志、规则副本、规则哈希 | 独占 DNS 53；与 INetSim DNS 冲突 |
 | Apache HTTPD / `apache2` | 提供固定无害 HTTP 响应 | access/error log、页面副本哈希 | 独占 HTTP 80/443；与 INetSim HTTP 冲突 |
 | INetSim | 模拟多种互联网服务 | session/report/service log、配置副本 | 默认可能占用 DNS/HTTP 等端口 |
-| tcpdump / Wireshark | Debian 侧实验网卡抓包 | PCAP、抓包条件与接口名 | 不监听宿主/办公网络接口 |
+| tcpdump / Wireshark | Ubuntu 侧实验网卡抓包 | PCAP、抓包条件与接口名 | 不监听宿主/办公网络接口 |
 | `ss` / `lsof` / `journalctl` | 监听与服务状态核验 | 端口监听清单、服务日志 | 实验开始前检查端口唯一性 |
 
 ## 安装与基线
 
-在断网或严格受控的 Debian 实验机上，从发行版可信仓库或项目官方 release 获取工具；安装完成后记录软件包版本与配置哈希。推荐将服务运行在非特权账户，日志写入案例专用目录。
+在断网或严格受控的 Ubuntu 实验机上，从发行版可信仓库或项目官方 release 获取工具；安装完成后记录软件包版本与配置哈希。推荐将服务运行在非特权账户，日志写入案例专用目录。
 
 ```bash
 # 仅作为实验机准备示例；先核验仓库来源与网络隔离
@@ -38,8 +38,8 @@ python3 -m venv ~/fakedns-venv
 
 ## FakeDNS 实战
 
-1. 仅绑定 Debian 的实验网卡地址；不要监听所有生产网卡。
-2. 为每次实验保存规则文件副本和 SHA-256，将测试域名解析到 Debian 实验地址。
+1. 仅绑定 Ubuntu 的实验网卡地址；不要监听所有生产网卡。
+2. 为每次实验保存规则文件副本和 SHA-256，将测试域名解析到 Ubuntu 实验地址。
 3. 从 Win11 使用无害 `nslookup` 或 `Resolve-DnsName` 验证解析；记录查询时间、类型、客户端 IP 和响应地址。
 4. 将 DNS 日志与 Wireshark 的 DNS 包、Win11 进程 PID、Volatility 网络对象交叉对齐。
 
@@ -60,7 +60,7 @@ python3 -m venv ~/fakedns-venv
 ## 最小证据归档
 
 ```text
-<案例编号>/debian/
+<案例编号>/ubuntu/
   fakedns/规则副本、查询日志、哈希
   apache/站点副本、access/error log、配置哈希
   inetsim/配置副本、session、report、服务日志

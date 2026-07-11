@@ -69,8 +69,8 @@ C:\Lab\Evidence\LAB-001\
 
 ## 执行前检查
 
-- [ ] Win11 与 Debian 仅位于内部/仅主机网络，无 NAT、桥接、共享剪贴板、共享目录或默认出网路由。
-- [ ] 已还原 `win11-clean` 和 `debian-clean` 快照，记录快照编号与时间。
+- [ ] Win11 与 Ubuntu 仅位于内部/仅主机网络，无 NAT、桥接、共享剪贴板、共享目录或默认出网路由。
+- [ ] 已还原 `win11-clean` 和 `ubuntu-clean` 快照，记录快照编号与时间。
 - [ ] Procmon 可正常启动；用无害程序确认可以开始/停止捕获并保存 PML。
 - [ ] `Noriben.config`、PMC、白名单和可选 YARA 规则均已复制到案例目录并记录哈希。
 - [ ] 输出目录空间充足；PCAP、内存采集工具和 Volatility 3 已准备但尚未混入原始输出目录。
@@ -164,18 +164,18 @@ Noriben 报告通常按进程、文件、注册表、网络等事件归纳，具
 | 没有 PML/报告 | 输出目录权限、磁盘空间、Procmon 是否已启动、控制台报错 | 保留报错和环境信息；不要假设“无行为” |
 | 报告事件太少 | PMC/白名单/过滤规则、采集起止时间 | 先离线重分析同一 PML，再最小化调整规则 |
 | 报告噪声太大 | 是否保留默认白名单、是否在干净快照运行 | 不用宽泛排除规则；按已验证噪声逐条处理 |
-| 时间与 PCAP 不一致 | Win11/Debian 时区、NTP、采集开始/结束记录 | 统一到 UTC，在报告中保留原始时区 |
+| 时间与 PCAP 不一致 | Win11/Ubuntu 时区、NTP、采集开始/结束记录 | 统一到 UTC，在报告中保留原始时区 |
 | YARA/哈希功能失败 | 规则/白名单路径、依赖、输入权限 | 把附加扫描视为可选，核心 PML 不受其失败影响 |
 
 ## 实战场景：DNS → HTTP → 内存镜像
 
 **目标**：在无害测试程序中形成一次受控 DNS 查询与 HTTP 请求，并把 Noriben 时间线连接到网络和内存证据。
 
-1. 还原 Win11/Debian 快照；Debian 启动 FakeDNS 与 Apache，保存规则/页面哈希。
+1. 还原 Win11/Ubuntu 快照；Ubuntu 启动 FakeDNS 与 Apache，保存规则/页面哈希。
 2. Win11 启动 Wireshark 和 Noriben（模式 A）；记录 Noriben 开始时间。
 3. 手动运行无害测试程序，记录 PID、DNS/HTTP 发生时间和目标域名。
 4. 在连接仍存在的窗口采集内存；立即计算镜像 SHA-256。
-5. 停止 Noriben、Wireshark 和 Debian 服务，归档 PML、CSV、Noriben 报告、PCAP、DNS/HTTP 日志。
+5. 停止 Noriben、Wireshark 和 Ubuntu 服务，归档 PML、CSV、Noriben 报告、PCAP、DNS/HTTP 日志。
 6. 以 PID、五元组、域名、时间和内存对象地址完成三方关联；记录连接未出现在镜像中的可能原因。
 
 ## 完成清单

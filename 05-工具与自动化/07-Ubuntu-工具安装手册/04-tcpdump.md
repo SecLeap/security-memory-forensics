@@ -2,7 +2,7 @@
 
 ## 获取与安装
 
-在隔离 Debian 从可信仓库安装：
+在隔离 Ubuntu 从可信仓库安装：
 
 ```bash
 sudo apt update
@@ -23,7 +23,7 @@ sudo apt install tcpdump
 
 1. 用 `ip link` 确认实验接口，再设置仅针对实验网段/协议的捕获过滤条件。
 2. 启动测试前开始写入案例 PCAP，停止后记录文件大小、SHA-256、接口和过滤器。
-3. 用 Wireshark 复核 DNS/HTTP/会话时间，不在 Debian 上保存无关接口流量。
+3. 用 Wireshark 复核 DNS/HTTP/会话时间，不在 Ubuntu 上保存无关接口流量。
 
 ## 实战场景与完成标准
 

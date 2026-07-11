@@ -108,7 +108,7 @@ Get-FileHash $sample -Algorithm SHA256 | Tee-Object -FilePath $out -Append
 
 ### 场景三：受控实验中的静态—动态—内存闭环
 
-适用于仓库的 Win11/Debian 隔离实验环境，材料限于良性测试程序、公开教学样本或明确授权材料。
+适用于仓库的 Win11/Ubuntu 隔离实验环境，材料限于良性测试程序、公开教学样本或明确授权材料。
 
 1. 测试前：HashMyFiles 记录样本哈希；DiE、PEStudio 记录格式与静态线索。
 2. 测试中：Noriben/Procmon 记录进程、文件和注册表事件；Wireshark 或 FakeNet-NG 记录受控网络证据。

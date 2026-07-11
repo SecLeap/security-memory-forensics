@@ -2,9 +2,9 @@
 
 ## 场景一：DNS 请求与 HTTP 访问的内存归因
 
-**目标**：在无害测试程序中建立一次受控 DNS→HTTP 行为，学习将 Debian 侧服务日志、Windows PCAP、Procmon 和内存 socket 关联到同一 PID。
+**目标**：在无害测试程序中建立一次受控 DNS→HTTP 行为，学习将 Ubuntu 侧服务日志、Windows PCAP、Procmon 和内存 socket 关联到同一 PID。
 
-| 阶段 | Windows 11 | Debian | 内存取证问题 |
+| 阶段 | Windows 11 | Ubuntu | 内存取证问题 |
 | --- | --- | --- | --- |
 | 准备 | 启动 Procmon/Noriben、Wireshark，记录基线 PID | 选择“DNS/HTTP 分离”模式，启动 FakeDNS 与 Apache | 运行前是否已有相同连接/缓存？ |
 | 触发 | 运行无害测试程序 | 保存 DNS 与 HTTP 日志 | 哪个 PID 发起请求？域名如何解析？ |
@@ -28,7 +28,7 @@
 **目标**：使用 INetSim 模拟多种服务，理解“服务端日志存在”与“内存中仍可见网络对象”不是同一结论。
 
 1. 选择“全服务模拟”模式，仅运行 INetSim；关闭 FakeDNS 和 Apache，避免端口冲突。
-2. 在 Debian 保存 INetSim session/report、服务日志和 PCAP；在 Windows 保存 Procmon、Wireshark 和进程信息。
+2. 在 Ubuntu 保存 INetSim session/report、服务日志和 PCAP；在 Windows 保存 Procmon、Wireshark 和进程信息。
 3. 在连接进行中制作一次镜像；连接完成/关闭后再制作一次镜像。
 4. 分别分析两份镜像中的 socket、进程和字符串，解释对象回收、缓存和采集时机带来的差异。
 
@@ -50,4 +50,3 @@
 | 哪个进程创建了文件或改动注册表？ | Procmon/Noriben + Regshot + System Informer | 进程、句柄、VAD、模块与时间对齐 |
 | 某个连接是否仍然活跃？ | INetSim/Apache 日志 + Wireshark | socket 状态与所属进程；注明采集时刻 |
 | 某内存映像从何而来？ | PeStudio/DIE/Ghidra + x64dbg/WinDbg | 模块列表、VAD、线程入口和字节上下文 |
-

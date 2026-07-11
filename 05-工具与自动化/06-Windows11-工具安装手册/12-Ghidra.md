@@ -77,7 +77,7 @@ RVA = Ghidra 静态地址 - Ghidra image base
 
 1. Ghidra 中定位静态字符串及 Xref，记录函数 RVA 和字节。
 2. FLOSS/PEStudio 交叉确认字符串编码和文件偏移，capa 提供能力规则线索。
-3. 使用 Fiddler/Wireshark/FakeNet 或 Debian 服务日志验证同时间的实际通信，并在镜像中复核 PID/socket/VAD。
+3. 使用 Fiddler/Wireshark/FakeNet 或 Ubuntu 服务日志验证同时间的实际通信，并在镜像中复核 PID/socket/VAD。
 4. 字符串仅作为候选 IOC；没有独立网络/内存对象证据时不描述为已执行通信。
 
 ## 常见问题与排错

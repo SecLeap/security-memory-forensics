@@ -49,5 +49,5 @@
 <案例编号>_<UTC时间>_<主机>_<证据类型>_<工具版本>.<扩展名>
 LAB-001_20260711T090000Z_WIN11_procmon_4.01.pml
 LAB-001_20260711T090500Z_WIN11_memory_acquirer-x.raw
-LAB-001_20260711T090000Z_DEBIAN_inetsim.log
+LAB-001_20260711T090000Z_UBUNTU_inetsim.log
 ```

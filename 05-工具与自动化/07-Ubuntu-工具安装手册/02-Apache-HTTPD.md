@@ -2,7 +2,7 @@
 
 ## 获取与安装
 
-仅在隔离 Debian 实验机从可信发行版仓库安装：
+仅在隔离 Ubuntu 实验机从可信发行版仓库安装：
 
 ```bash
 sudo apt update

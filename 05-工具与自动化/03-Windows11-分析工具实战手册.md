@@ -44,7 +44,7 @@
 
 1. Wireshark 只选择实验虚拟网卡；从启动测试前开始抓包，停止后保存 PCAPNG、抓取接口和显示过滤器。
 2. 若采用 Fiddler，记录代理设置和生效时间；HTTPS 解密只在自建无害服务与明确授权条件下使用。
-3. TCPLogView/Network Connections 仅作快速辅助视图，网络结论至少由 PCAP 或 Debian 服务端日志复核。
+3. TCPLogView/Network Connections 仅作快速辅助视图，网络结论至少由 PCAP 或 Ubuntu 服务端日志复核。
 4. 将 DNS 域名、五元组、请求时间和 PID 回填至 Case Timeline；再在 Volatility 3 中检查对应的 socket/进程对象。
 
 ## 内存与调试联动手册

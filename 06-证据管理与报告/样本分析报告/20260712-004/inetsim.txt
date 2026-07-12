@@ -1,0 +1,44 @@
+[2026-07-12 13:44:16] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:16] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type A, Class IN, Name activity.windows.com
+[2026-07-12 13:44:16] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: activity.windows.com 3600 IN A 127.0.0.1
+[2026-07-12 13:44:16] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:16] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=A qclass=IN qname=activity.windows.com
+[2026-07-12 13:44:17] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:17] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type PTR, Class IN, Name 129.101.101.101.in-addr.arpa
+[2026-07-12 13:44:17] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: 129.101.101.101.in-addr.arpa 3600 IN PTR www.inetsim.org
+[2026-07-12 13:44:17] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:17] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=PTR qclass=IN qname=129.101.101.101.in-addr.arpa
+[2026-07-12 13:44:24] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:24] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type A, Class IN, Name 98ba5f6.dns1.dreamls.com
+[2026-07-12 13:44:24] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: 98ba5f6.dns1.dreamls.com 3600 IN A 127.0.0.1
+[2026-07-12 13:44:24] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:24] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=A qclass=IN qname=98ba5f6.dns1.dreamls.com
+[2026-07-12 13:44:29] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:29] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type A, Class IN, Name 98ba5f6.dns2.dreamls.com
+[2026-07-12 13:44:29] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: 98ba5f6.dns2.dreamls.com 3600 IN A 127.0.0.1
+[2026-07-12 13:44:29] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:29] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=A qclass=IN qname=98ba5f6.dns2.dreamls.com
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type PTR, Class IN, Name 1.101.101.101.in-addr.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: 1.101.101.101.in-addr.arpa 3600 IN PTR www.inetsim.org
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=PTR qclass=IN qname=1.101.101.101.in-addr.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type PTR, Class IN, Name 251.0.0.224.in-addr.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: 251.0.0.224.in-addr.arpa 3600 IN PTR www.inetsim.org
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=PTR qclass=IN qname=251.0.0.224.in-addr.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type PTR, Class IN, Name 5.d.0.7.1.2.3.7.f.9.2.f.f.3.6.c.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: 5.d.0.7.1.2.3.7.f.9.2.f.f.3.6.c.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa 3600 IN PTR www.inetsim.org
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=PTR qclass=IN qname=5.d.0.7.1.2.3.7.f.9.2.f.f.3.6.c.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] connect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] recv: Query Type PTR, Class IN, Name b.f.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.f.f.ip6.arpa
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] send: b.f.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.f.f.ip6.arpa 3600 IN PTR www.inetsim.org
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] disconnect
+[2026-07-12 13:44:30] [2088] [dns_53_tcp_udp 2093] [101.101.101.128] stat: 1 qtype=PTR qclass=IN qname=b.f.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.f.f.ip6.arpa
+
+
+
+

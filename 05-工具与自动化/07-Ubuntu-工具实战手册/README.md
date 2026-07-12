@@ -1,6 +1,6 @@
-# Ubuntu 工具安装手册
+# Ubuntu 工具实战手册
 
-此目录按工具拆分 Ubuntu 模拟服务端的部署。所有服务仅绑定内部实验网卡，不配置 NAT、桥接、默认出网路由或 DNS 转发。
+此目录按工具拆分 Ubuntu 模拟服务端的准备、验证与证据记录。所有服务仅绑定内部实验网卡，不配置 NAT、桥接、默认出网路由或 DNS 转发。
 
 - [01-FakeDNS](01-FakeDNS.md)
 - [02-Apache HTTPD](02-Apache-HTTPD.md)

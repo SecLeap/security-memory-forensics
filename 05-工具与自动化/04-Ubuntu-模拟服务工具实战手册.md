@@ -2,16 +2,23 @@
 
 Ubuntu 在实验室中充当受控服务与证据记录端：接收 Win11 实验机的 DNS/HTTP 等请求并写入日志。它绝不能作为互联网出口、代理、跳板或生产服务。
 
-单个服务的安装、验证、使用方法与场景以 [Ubuntu 逐工具手册](07-Ubuntu-工具安装手册/README.md) 为准；本页只保留服务组合、端口关系和证据归档。
+单个服务的准备、验证、使用方法与场景以 [Ubuntu 逐工具实战手册](07-Ubuntu-工具实战手册/README.md) 为准；本页只保留服务组合、端口关系和证据归档。
+
+## 单工具实战手册
+
+- [01-FakeDNS](07-Ubuntu-工具实战手册/01-FakeDNS.md)
+- [02-Apache HTTPD](07-Ubuntu-工具实战手册/02-Apache-HTTPD.md)
+- [03-INetSim](07-Ubuntu-工具实战手册/03-INetSim.md)
+- [04-tcpdump](07-Ubuntu-工具实战手册/04-tcpdump.md)
 
 ## 工具总表
 
 | 工具 | 职责 | 实践产物 | 端口关系 |
 | --- | --- | --- | --- |
-| FakeDNS | 将实验域名解析到 Ubuntu 地址 | 查询日志、规则副本、规则哈希 | 独占 DNS 53；与 INetSim DNS 冲突 |
-| Apache HTTPD / `apache2` | 提供固定无害 HTTP 响应 | access/error log、页面副本哈希 | 独占 HTTP 80/443；与 INetSim HTTP 冲突 |
-| INetSim | 模拟多种互联网服务 | session/report/service log、配置副本 | 默认可能占用 DNS/HTTP 等端口 |
-| tcpdump / Wireshark | Ubuntu 侧实验网卡抓包 | PCAP、抓包条件与接口名 | 不监听宿主/办公网络接口 |
+| [FakeDNS](07-Ubuntu-工具实战手册/01-FakeDNS.md) | 将实验域名解析到 Ubuntu 地址 | 查询日志、规则副本、规则哈希 | 独占 DNS 53；与 INetSim DNS 冲突 |
+| [Apache HTTPD / `apache2`](07-Ubuntu-工具实战手册/02-Apache-HTTPD.md) | 提供固定无害 HTTP 响应 | access/error log、页面副本哈希 | 独占 HTTP 80/443；与 INetSim HTTP 冲突 |
+| [INetSim](07-Ubuntu-工具实战手册/03-INetSim.md) | 模拟多种互联网服务 | session/report/service log、配置副本 | 默认可能占用 DNS/HTTP 等端口 |
+| [tcpdump](07-Ubuntu-工具实战手册/04-tcpdump.md) / Wireshark | Ubuntu 侧实验网卡抓包 | PCAP、抓包条件与接口名 | 不监听宿主/办公网络接口 |
 | `ss` / `lsof` / `journalctl` | 监听与服务状态核验 | 端口监听清单、服务日志 | 实验开始前检查端口唯一性 |
 
 ## 安装与基线

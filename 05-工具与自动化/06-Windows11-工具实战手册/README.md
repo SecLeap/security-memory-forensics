@@ -1,6 +1,6 @@
-# Windows 11 工具安装手册
+# Windows 11 工具实战手册
 
-每个工具一份手册。共同规则：仅从官方页面获取；先记录下载 URL、版本、SHA-256/签名与许可证；安装在隔离 Win11 虚拟机；安装完成后创建快照。不要安装来源不明的旧版、整合包或截图中的未知快捷方式。
+每个工具一份实战手册。共同规则：仅从官方页面获取；先记录下载 URL、版本、SHA-256/签名与许可证；在隔离 Win11 虚拟机中准备工具并创建快照。不要使用来源不明的旧版、整合包或截图中的未知快捷方式。
 
 ## 工具导航
 
@@ -20,12 +20,12 @@
 - [14-WinPmem](14-WinPmem.md)
 - [15-Regshot](15-Regshot.md)
 - [16-TCPLogView](16-TCPLogView.md)
-- [17-Scylla](17-Scylla.md)
+- 17-Scylla（文档待补充）
 - [18-HashMyFiles](18-HashMyFiles.md)
 - [19-CFF Explorer](19-CFF-Explorer.md)
-- [20-FileInsight](20-FileInsight.md)
+- 20-FileInsight（文档待补充）
 - [21-CyberChef](21-CyberChef.md)
-- [22-Imports Fixer](22-Imports-Fixer.md)
+- 22-Imports Fixer（文档待补充）
 - [23-Everything](23-Everything.md)
 - [24-Eric Zimmerman 工具（Timeline Explorer）](24-Timeline-Explorer.md)
 - [25-ProcDOT](25-ProcDOT.md)

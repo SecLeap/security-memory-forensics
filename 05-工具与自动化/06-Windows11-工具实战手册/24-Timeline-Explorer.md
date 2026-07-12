@@ -4,7 +4,7 @@
 
 [Eric Zimmerman Tools 官方工具页](https://ericzimmerman.github.io/#other-tools)列出 Timeline Explorer 及其他取证/辅助工具，并说明 Timeline Explorer 用于查看、过滤、分组和排序 CSV、Excel 文件。当前 GUI 工具采用 .NET 9；页面还提供全量自动下载脚本，但本仓库只安装案例所需的 Timeline Explorer，不使用该脚本批量下载无关工具，也不将其他工具扩展为本仓库的常规取证范围。
 
-本手册合并并替代原“Timeline Explorer 安装实战手册”的安装、验证、使用和内存取证联动内容。
+本手册合并并替代原“Timeline Explorer 实战手册”的工具准备、验证、使用和内存取证联动内容。
 
 ## 获取与安装
 

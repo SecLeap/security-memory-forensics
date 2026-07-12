@@ -1,4 +1,4 @@
-# Everything 安装实战手册
+# Everything 实战手册
 
 ## 获取与安装
 
